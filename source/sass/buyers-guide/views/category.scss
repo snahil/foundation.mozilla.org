@@ -34,6 +34,7 @@
 
   .categories-container {
     display: flex;
+    z-index: 1;
     flex-wrap: wrap;
 
     .category-item-container {
@@ -98,4 +99,6 @@
       }
     }
   }
+
+  @import "../components/creepiness-slider";
 }

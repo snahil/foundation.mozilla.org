@@ -8,7 +8,7 @@ import Creepometer from './components/creepometer/creepometer.jsx';
 import injectDonateModal from '../donate-modal/donate-modal.jsx';
 import Filter from './components/filter/filter.jsx';
 
-import HomepageSlider from './homepage-c-slider.js';
+import CreepinessSlider from './creepiness-slider.js';
 import ProductGA from './product-analytics.js';
 
 let main = {
@@ -21,16 +21,17 @@ let main = {
 
     primaryNav.init();
 
-    if (document.getElementById(`pni-home`)) {
-      HomepageSlider.init();
+    // initialise the scrolling creepiness emoji, if present
+    CreepinessSlider.init();
 
-      let filter = document.querySelector(`#product-filter`);
+    // initialise the result filter, if present.
+    let filter = document.querySelector(`#product-filter`);
 
-      if (filter) {
-        ReactDOM.render(<Filter />, filter);
-      }
+    if (filter) {
+      ReactDOM.render(<Filter />, filter);
     }
 
+    // Product-page specific inits:
     if (document.getElementById(`pni-product-page`)) {
       ProductGA.init();
 

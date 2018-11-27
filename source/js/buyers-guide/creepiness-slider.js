@@ -51,7 +51,7 @@ export default {
     let face = document.querySelector(`.current-creepiness`);
     let bubble = document.querySelector(`.speech-bubble`);
     let bubbleText = bubble.querySelector(`.text`);
-    let products = document.querySelectorAll(`.product-box`);
+    let products = document.querySelectorAll(`[data-creepiness]`);
 
     window.addEventListener(`scroll`, () => {
 

@@ -12,9 +12,11 @@
       <h1 class="h3-heading">{{ category.name }}</h1>
     </div>
 
+    {% include "fragments/creepiness-functionality.html" %}
+
     <div class="categories-container">
       {% for product in products %}
-      <div class="category-item-container" >
+      <div class="category-item-container" data-creepiness="{{ product.votes.creepiness.average }}">
         <a class="" href="/en/privacynotincluded/products/{{ product.slug }}">
           <div class="category-image-container">
             {% if product.meets_minimum_security_standards is True %}
